@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        // Load Charts and the corechart package.
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawAThing);
+        google.charts.setOnLoadCallback(drawAnotherThing);
+
+        // Raw data - can come from a server call (...)
+        var rawData = JSON.parse('{"another-thing":{"anotherAttribute":51,"anotherOneAttribute":51,"anAttribute":"a string to describe another thing"},"a-thing":{"anotherAttribute":1,"anotherOneAttribute":2,"anAttribute":"a string to describe a thing"}}');
+
+        function drawAThing() {
+            var rawDataAThing = rawData['a-thing'];
+
+            var dataAThing = google.visualization.arrayToDataTable([
+                ['a thing', rawDataAThing['anAttribute']],
+                ['anotherAttribute', rawDataAThing['anotherAttribute']],
+                ['anotherOneAttribute', rawDataAThing['anotherOneAttribute']],
+            ]);
+
+            var optionsAThing = {
+                title: 'A thing result',
+                pieHole: 0.4,
+                width: 700,
+                height: 400
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart-a-thing'));
+            chart.draw(dataAThing, optionsAThing);
+
+            var barchartAThingOptions = {
+                title: 'Barchart: How Much a thing',
+                width: 700,
+                height: 300,
+                legend: 'none'
+            };
+
+            var barchartAThing = new google.visualization.BarChart(document.getElementById('barchart-a-thing'));
+            barchartAThing.draw(dataAThing, barchartAThingOptions);
+        }
+
+        function drawAnotherThing() {
+            var rawDataAnotherThing = rawData['another-thing'];
+
+            var dataAnotherThing = google.visualization.arrayToDataTable([
+                ['another thing', rawDataAnotherThing['anAttribute']],
+                ['anotherAttribute', rawDataAnotherThing['anotherAttribute']],
+                ['anotherOneAttribute', rawDataAnotherThing['anotherOneAttribute']],
+            ]);
+
+            var optionsAnotherThing = {
+                title: 'Another thing result',
+                width: 700,
+                height: 400
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart-another-thing'));
+            chart.draw(dataAnotherThing, optionsAnotherThing);
+
+
+            var barchartAnotherThingOptions = {
+                title: 'Barchart: How Much another Thing',
+                width: 700,
+                height: 300,
+                legend: 'none'
+            };
+            var barchartAnotherThing = new google.visualization.BarChart(document.getElementById('barchart-another-thing'));
+            barchartAnotherThing.draw(dataAnotherThing, barchartAnotherThingOptions);
+        }
+    </script>
+</head>
+
+<body>
+    <table style="margin: 0px auto; ">
+        <tr>
+            <td>
+                <div id="piechart-a-thing" style="border: 1px solid #ccc"></div>
+            </td>
+            <td>
+                <div id="piechart-another-thing" style="border: 1px solid #ccc"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="barchart-a-thing" style="border: 1px solid #ccc"></div>
+            </td>
+            <td>
+                <div id="barchart-another-thing" style="border: 1px solid #ccc"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
