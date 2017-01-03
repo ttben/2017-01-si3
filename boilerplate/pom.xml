@@ -11,7 +11,7 @@
     <build>
         <plugins>
             <plugin>
-                <!-- To trigger this plugin, run the command 'mvn exec:java'-->
+                <!-- To trigger this plugin, run the AClass 'mvn exec:java'-->
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.5.0</version>
@@ -29,5 +29,12 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
     </dependencies>
 </project>
