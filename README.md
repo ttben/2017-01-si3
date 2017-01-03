@@ -5,6 +5,8 @@ This repository contains examples and resources for the drone delivery project.
 
 The benchmark analyse the whole execution trace that is produced by the Executor component. From this analysis, it will produce data for a visualisation (_i.e._ charts). How to _pass_ data from benchmark component to visualisation component? Via the JSON format, with a JSON file or a JSON string representation. So the benchmark analyse the trace (text file) and produces a JSON description of its analysis that will be consummed by the visualisation. In the [POJOToJson folder](https://github.com/ttben/2017-01-si3/tree/master/POJOToJson) you will find a way to convert a Plain Old Java Object (POJO) that describes something (a raw metric, a comparison, an evolution, ...) into a JSON Object and its description. Then, in the [JSONToChart folder](https://github.com/ttben/2017-01-si3/tree/master/JsonToChart) you will find *a way* to use these results in JSON format to draw charts (using Google Chart).
 
+You can find resources about JSON [here](http://json.org/), [here](https://www.mkyong.com/java/json-simple-example-read-and-write-json/), [here](http://stackoverflow.com/questions/1695883/what-is-json-can-you-explain-it-to-a-newbie) and [here](https://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/)
+
 # Visualisation
 You **can** use Google Chart for visualisation since it is a simple, trusted, and a well documented one.
 You will find the different types of charts [here](https://google-developers.appspot.com/chart/interactive/docs/gallery).
