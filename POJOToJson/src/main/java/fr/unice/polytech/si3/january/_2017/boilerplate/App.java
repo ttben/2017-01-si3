@@ -1,6 +1,6 @@
 package fr.unice.polytech.si3.january._2017.boilerplate;
 
-import org.json.simple.JSONObject;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class App {
         JSONObject result = new JSONObject();
         result.put("a-thing", AClassToJsonConverter.convert(aClass));
         result.put("another-thing", AClassToJsonConverter.convert(anotherClass));
-        String jsonStrDescription = result.toJSONString();
+        String jsonStrDescription = result.toString();
         System.out.printf("Here are the corresponding JSON object:\n%s\n", jsonStrDescription);
     }
 }

@@ -1,7 +1,8 @@
 package fr.unice.polytech.si3.january._2017.boilerplate;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -17,9 +18,9 @@ public class AClassToJsonConverter {
     public static JSONArray convert(List<AClass> AClassList) {
         JSONArray jsonArray = new JSONArray();
 
-        for(AClass currentAClass : AClassList) {
+        for (AClass currentAClass : AClassList) {
             JSONObject currentCommandConverted = convert(currentAClass);
-            jsonArray.add(currentCommandConverted);
+            jsonArray.put(currentCommandConverted);
         }
 
         return jsonArray;
